@@ -31,8 +31,8 @@ import java.util.Set;
  * the inferencing algorithm.</p>
  * <pre> {@code public Set<Set<String>> getQueries() 
  * {
- *    {@code Set<Set<String>> query = new LinkedHashSet<Set<String>>();
- *    {@code Set<String> query1 = new LinkedHashSet&lt;String>();}
+ *    {@code Set<Set<String>> query = new LinkedHashSet<Set<String>>();}
+ *    {@code Set<String> query1 = new LinkedHashSet<String>();}
  *    {@code query1.add("?person, nationality, ?country");}
  *    {@code query1.add("?country, part_of, ?continent");}
  *     
