@@ -12,7 +12,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
-import java.util.Vector;
+import java.util.ArrayList;
 import java.util.List;
 //import java.util.logging.Logger;
 //import java.util.logging.Level;
@@ -231,7 +231,7 @@ public class Graph
 				{
 					// Keep tokens with " together
 					// Pattern: SPR,industry,"Aircraft Parts and Auxiliary Equipment, NEC"
-					Vector<String> tokens = new Vector<String>();
+					List<String> tokens = new ArrayList<String>();
 					while (token.hasMoreElements())
 					{
 						String temp = token.nextToken();
@@ -477,7 +477,7 @@ public class Graph
 			// bpos stores the variables and the position in the triple
 			Map<String,Integer> bpos = new HashMap<String,Integer>();
 			// qc stores the 3 triple values
-			List<String>  qc = new Vector<String>();
+			List<String>  qc = new ArrayList<String>();
 			
 			// determin the variables in the clause, save them with their position (bpos)
 			// and build the search-pattern (qc)
@@ -503,7 +503,7 @@ public class Graph
 			// elements something is wrong
 			if (qc.size() != 3)
 			{
-				logger.error("Vector qc.size != 3 !!!");
+				logger.error("List qc.size != 3 !!!");
 				return null;
 			}
 			

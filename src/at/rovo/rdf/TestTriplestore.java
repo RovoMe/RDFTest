@@ -1,9 +1,10 @@
 package at.rovo.rdf;
 
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class TestTriplestore
 {
@@ -105,7 +106,7 @@ public class TestTriplestore
 		System.out.println("Movies Harrison Ford played in: ");
 		String harrisonfordId = graph.value("", "name", "Harrison Ford");
 		Set<Triple> harrisonfordMovieId = graph.triples("", "starring", harrisonfordId);
-		Vector<String> moviesHarrisonFordPlayedIn = new Vector<String>();
+		List<String> moviesHarrisonFordPlayedIn = new ArrayList<String>();
 		for (Triple t : harrisonfordMovieId)
 		{
 			moviesHarrisonFordPlayedIn.add(graph.value(t.getSubject(), "name", ""));
@@ -115,12 +116,12 @@ public class TestTriplestore
 		
 		String spielbergId = graph.value("", "name", "Steven Spielberg");
 		Set<Triple> spielbergMovieIds = graph.triples("", "directed_by", spielbergId);
-		Vector<String> moviesDirectedByStevenSpielberg = new Vector<String>();
+		List<String> moviesDirectedByStevenSpielberg = new ArrayList<String>();
 		for (Triple t : spielbergMovieIds)
 			moviesDirectedByStevenSpielberg.add(graph.value(t.getSubject(), "name",""));	
 		
 		System.out.println("Movies Harrison Ford played in and Steven Spielberg directed: ");
-		Vector<String> intersection = new Vector<String>(moviesDirectedByStevenSpielberg);
+		List<String> intersection = new ArrayList<String>(moviesDirectedByStevenSpielberg);
 		intersection.retainAll(moviesHarrisonFordPlayedIn);
 		for (String s : intersection)
 			System.out.println("\t"+s);
