@@ -4,6 +4,16 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * <p>
+ * This rule simply assumes that a person originating from a specific country,
+ * which is part of a continent, is also located on the country's continent. It
+ * therefore connect the person in question with the continent of his 
+ * nationality.
+ * </p>
+ * 
+ * @author Roman Vottner
+ */
 public class ContinentRule implements InferenceRule
 {
 	@Override
@@ -26,5 +36,4 @@ public class ContinentRule implements InferenceRule
 		ret.add(t);
 		return ret;
 	}
-
 }

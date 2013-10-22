@@ -4,6 +4,17 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * <p>
+ * This rule simply checks if the headquarter of a company is located in 
+ * San Francisco, Seattle, Los Angeles or Portland. If so those companies are
+ * assumed to be located at the west coast of the United States. It therefore
+ * create new RDF facts that connect the company with the west_coast using the
+ * on_coast predicate.
+ * </p>
+ * 
+ * @author Roman Vottner
+ */
 public class WestCoastRule implements InferenceRule
 {
 	@Override

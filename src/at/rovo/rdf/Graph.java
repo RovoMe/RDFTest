@@ -137,7 +137,7 @@ public class Graph
 			String b, String c)
 	{
 		// checks if the subject of the triple already exists
-		// if not, create the whole tripple
+		// if not, create the whole triple
 		if (!index.containsKey(a))
 		{
 			Map<String, Set<String>> bc = new HashMap<String, Set<String>>();
@@ -226,6 +226,8 @@ public class Graph
 			String line = null;
 			while ( (line = bufferedReader.readLine()) != null)
 			{
+				if (line.contains("Blade Runner"))
+					line = line+"";
 				StringTokenizer token = new StringTokenizer(line,",");
 				if (line.contains("\""))
 				{
@@ -516,7 +518,7 @@ public class Graph
 			{
 				// This is the first pass, create a new binding
 				// The binding will store the token as key and its corresponding binding
-				// f.e: tripplestore contains '[a] [b] [c]' and [a] [b] [d]'
+				// f.e: triplestore contains '[a] [b] [c]' and [a] [b] [d]'
 				// query: '[a] [b] ?var' 
 				// then binding will contain:
 				// '?var [c]' and '?var [d]'

@@ -4,6 +4,15 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * <p>
+ * This rule simply assumes that the enemy of a person A is also the enemy of 
+ * the person A has a relationship with. It therefore creates new RDF facts
+ * that the relationship partner is an enemy with the partner's enemy.
+ * </p>
+ * 
+ * @author Roman Vottner
+ */
 public class EnemyRule implements InferenceRule
 {
 
@@ -30,5 +39,4 @@ public class EnemyRule implements InferenceRule
 		ret.add(t);
 		return ret;
 	}
-
 }
